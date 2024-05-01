@@ -14,7 +14,11 @@ const Home=(props)=>{
         {value=>{
             const{onChangeUser}=props
             const{users}=value
-            const bool=user=='' || user>users.length
+            const bool=users.forEach(each=>{
+                if(each.name===user){
+                    return true
+                }
+            return false})
                 // let length=users.length 
                 // if(user>length || user==""){
                 //     setMessageView("true")
@@ -35,16 +39,17 @@ const Home=(props)=>{
                 </Link>
                 </div>
                 <div className='home2'>
-                <input className='home-input' type="text" placeholder='Enter serial number of user'  onChange={e=>change(e)}/>
-                {bool?
-                (<p className='msg'>*User Does not Exit</p>):
-                (<>
-                <Link to='/taskStatus'>
-                    <button type="button" >{head}</button>
-                </Link>
-                </>)
-                }
                 
+                <label htmlFor="user">Select User</label>
+                    <select id="user" value={user} onChange={e=>change(e)} >
+                        <option value="">Select User</option>
+                        {users.map(user => (
+                        <option key={user.id} value={user.name}>{user.name}</option>
+                        ))}
+                    </select>
+                <Link to='/taskStatus'>
+                    <button type="button" disabled={bool}>{head} </button>
+                </Link>
                 </div>
                 </div>
                 </>

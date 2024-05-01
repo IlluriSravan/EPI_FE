@@ -49,7 +49,7 @@ function App() {
   }
 
   const statusChange=(id,user)=>{
-    const filteredTasks=users[user-1].tasks
+    const filteredTasks=users.filter(each=>each.name===user)[0].tasks
     const updatedTasks=filteredTasks.map(each=>{
       if(each.id===id){
         return{...each,status:'Complete'}
@@ -58,7 +58,7 @@ function App() {
     })
     const updatedUsers=users.map(each=>{
       console.log("EACH",typeof each.id,typeof user);
-      if(each.id==user){
+      if(each.name===user){
         
         return{...each,tasks:updatedTasks}
       }
@@ -72,7 +72,7 @@ function App() {
   }
 
   const taskEdit=(id,user,input)=>{
-    const filteredTasks=users[user-1].tasks
+    const filteredTasks=users.filter(each=>each.name===user)[0].tasks
     
     const updatedTasks=filteredTasks.map(each=>{
 
@@ -84,7 +84,7 @@ function App() {
     })
     const updatedUsers=users.map(each=>{
       console.log("EACH",typeof each.id,typeof user);
-      if(each.id==user){
+      if(each.name===user){
         
         return{...each,tasks:updatedTasks}
       }

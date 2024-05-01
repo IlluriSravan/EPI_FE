@@ -17,7 +17,8 @@ ul{
     align-items: center;
 }
 .edit-input{
-    height:20px
+    height:20px;
+    width:40px;
 }
 .edit-but{
     height:30px;
@@ -34,7 +35,7 @@ ul{
 li{
     display: flex;
     padding:0 20px;
-    justify-content: space-between;width:50vw;
+    justify-content: space-between;width:70vw;
     align-items: center;
     border:1px solid gray;
     margin:20px;

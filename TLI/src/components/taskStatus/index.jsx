@@ -9,12 +9,14 @@ const TaskStatus=()=>(
     {value=>{
         const {users,user,statusChange,taskEdit}=value
         
-        const tasksList=users[user-1].tasks;
+        const tasksLi=users.filter(each=>each.name===user);
+        const tasksList=tasksLi[0]?.tasks
+        console.log("N",tasksList);
         
         let name=""
         users.forEach(each=>{
             console.log("NAME",each.id,user);
-            if(each.id==user){
+            if(each.name==user){
                 
                 name=each.name
             }
@@ -31,7 +33,7 @@ const TaskStatus=()=>(
         return(
             <div className='seec'>
             <h1>Tasks of {name}</h1>
-            {tasksList.length===0?
+            {tasksList.length===0 || tasksList===undefined?
             (
                 <>
                 <p>No Tasks to show</p>
