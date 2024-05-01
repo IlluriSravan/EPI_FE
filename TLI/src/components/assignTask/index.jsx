@@ -62,7 +62,7 @@ const AssignTask =() => {
                     </form>
 
                     <form className='newUser' onClick={onClick}>
-                        <label htmlFor='new-user'>Add New User:</label>
+                        <label className="tec" htmlFor='new-user'>Add New User:</label>
                         <input value={newUser} type="text" id="new-user" onChange={e=>setNewUser(e.target.value)} required/>
                         <button type="submit" className='add-user-butt' >Add User</button>
                     </form>
