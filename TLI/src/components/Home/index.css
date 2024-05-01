@@ -1,0 +1,26 @@
+.home{
+    display: flex;
+    align-items: center;
+    
+    
+}
+
+.home2{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10vw;
+    
+}
+.msg{
+    line-height: 0.2;
+    font-size: 14px;
+    color: red;
+}
+.home-input{
+    height:25px;
+    border-radius: 4px;
+    color:white;
+    margin:0px  0;
+    border:1px solid gray;
+}

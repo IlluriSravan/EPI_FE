@@ -1,0 +1,47 @@
+.completeClass{
+    background-color: green;
+    color:white
+}
+.butt{
+    border:1px solid gray;
+    border-radius: 10px;
+    height:30px;
+    padding-bottom: 20px;
+    padding:0 10px;
+}
+ul{
+    list-style-type: none;
+}
+.editt{
+    display: flex;
+    align-items: center;
+}
+.edit-input{
+    height:20px
+}
+.edit-but{
+    height:30px;
+   padding:0 10px;
+    text-align: center;
+    margin:10px
+}
+.incomplete{
+    color: red
+}
+.complete{
+    color:green
+}
+li{
+    display: flex;
+    padding:0 20px;
+    justify-content: space-between;width:50vw;
+    align-items: center;
+    border:1px solid gray;
+    margin:20px;
+    border-radius: 20px;
+}
+@media (max-width:490px){
+    li{
+        width:80vw;
+    }
+}

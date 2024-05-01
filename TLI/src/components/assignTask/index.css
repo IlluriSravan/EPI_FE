@@ -1,0 +1,35 @@
+.task-input{
+    display: flex;
+    align-items: center;
+}
+.bg{
+    display: flex;
+}
+.top{
+    margin:30px
+}
+.add-user-butt{
+    height:30px;
+    padding: 0 10px;
+    font-size: 12px;
+}
+input,select{
+    margin:10px
+}
+
+.newUser{
+    margin:20px 0;
+    display: flex;
+    align-items: center;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: left;
+    align-items: flex-start;
+    border:2px solid gray;
+    border-radius: 10px;
+    
+    padding: 20px;
+}
