@@ -39,7 +39,7 @@ const Home=(props)=>{
                 </Link>
                 </div>
                 <div className='home2'>
-                
+                <div className='home3'>
                 <label htmlFor="user">Select User</label>
                     <select id="user" value={user} onChange={e=>change(e)} >
                         <option value="">Select User</option>
@@ -47,10 +47,12 @@ const Home=(props)=>{
                         <option key={user.id} value={user.name}>{user.name}</option>
                         ))}
                     </select>
-                <Link to='/taskStatus'>
+                    </div>
+                    <Link to='/taskStatus'>
                     <button type="button" disabled={bool}>{head} </button>
                 </Link>
                 </div>
+                
                 </div>
                 </>
             )

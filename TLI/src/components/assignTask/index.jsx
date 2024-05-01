@@ -38,7 +38,7 @@ const AssignTask =() => {
 
                 return(
                     <div >
-                        <h1>Create or Assign Tasks</h1>
+                        <h1>Create User or Assign Tasks</h1>
                     <form className='form' onSubmit={handleSubmit}>
                         <div className='task-input'>
                         <label htmlFor="task-inp">Enter the Task</label>
