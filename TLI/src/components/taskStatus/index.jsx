@@ -10,24 +10,17 @@ const TaskStatus=()=>(
         const {users,user,statusChange,taskEdit}=value
         
         const tasksLi=users.filter(each=>each.name===user);
-        const tasksList=tasksLi[0]?.tasks
-        console.log("N",tasksList);
-        
+        const tasksList=tasksLi[0]?.tasks        
         let name=""
         users.forEach(each=>{
-            console.log("NAME",each.id,user);
             if(each.name==user){
-                
                 name=each.name
             }
         })
-        console.log(tasksList);
         const onClickComplete=id=>{
-            console.log("Buuttt",id,user);
             statusChange(id,user)
         }
         const onEdit=(id,input)=>{
-            console.log("EDI",id,user,input);
             taskEdit(id,user,input)
         }
         return(
@@ -38,8 +31,8 @@ const TaskStatus=()=>(
                 <>
                 <p>No Tasks to show</p>
                 <Link to='/'>
-            <button type="button" >Back</button>
-        </Link>
+                    <button type="button" >Back</button>
+                </Link>
                 </>
                 
             ):
@@ -48,7 +41,7 @@ const TaskStatus=()=>(
                 
             {tasksList.map(each=>(
                 <TaskItem key={each.id} details={each} onEdit={onEdit} onClickComplete={onClickComplete}/>
-))}
+            ))}
             </ul>
             <Link to="/">
                 <button className='top' type="button">Home</button>
@@ -61,6 +54,5 @@ const TaskStatus=()=>(
 }
 </AppContext.Consumer>
 )
-
 
 export default TaskStatus

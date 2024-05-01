@@ -1,8 +1,6 @@
 .home{
     display: flex;
     align-items: center;
-    
-    
 }
 #user{
     border-radius: 10px;

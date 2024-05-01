@@ -1,6 +1,5 @@
 import {BrowserRouter,Route,Routes} from 'react-router-dom'
 import './App.css'
-
 import Home from './components/Home/index.jsx'
 import AssignTask from './components/assignTask/index.jsx'
 import TaskStatus from './components/taskStatus/index.jsx'
@@ -9,14 +8,11 @@ import {useState} from 'react'
 import {v4 as uuidv4} from 'uuid'
 
 
-
 function App() {
   const usersData = [
     { id: 1, name: 'John Doe',tasks:[{id:1,task:'do',status:"Incomplete"},{id:2,task:'do',status:"Incomplete"}] },
     { id: 2, name: 'Jane Smith',tasks:[] },
-    
   ];
-  
   
   let count=3
   const [users,setUsers]=useState(usersData)
@@ -24,26 +20,19 @@ function App() {
   
   const onTaskAddition=(selectedUser,task)=>{
     
-    const updatedUsers=users.map(eachUser=>{
-      const newTask={id:uuidv4(),task,status:'Incomplete'}
-      
-      if(eachUser.name===selectedUser){
-        const prevTasks=eachUser.tasks
-          const tasks=[...prevTasks,newTask]
-          console.log("T",tasks);
-          return {...eachUser,tasks}
-      }
-      return{...eachUser}
-      
-      
+  const updatedUsers=users.map(eachUser=>{
+    const newTask={id:uuidv4(),task,status:'Incomplete'}
+    
+    if(eachUser.name===selectedUser){
+      const prevTasks=eachUser.tasks
+        const tasks=[...prevTasks,newTask]
+        return {...eachUser,tasks}
+    }
+    return{...eachUser}
   }) 
-
   setUsers(updatedUsers)
-  
-  console.log(("PPP",users));
   }
   
-
   const onChangeUser=user=>{
     setUser(user)
   }
@@ -57,47 +46,33 @@ function App() {
       return {...each}
     })
     const updatedUsers=users.map(each=>{
-      console.log("EACH",typeof each.id,typeof user);
       if(each.name===user){
-        
         return{...each,tasks:updatedTasks}
       }
       return {...each}
     })
-    console.log("tasks",filteredTasks);
-    console.log("updatedtasks",updatedTasks);
-    console.log("updatedUsers",updatedUsers);
+    
     setUsers(updatedUsers)
-    // console.log("UPPPPP",updatedUsers);
   }
 
   const taskEdit=(id,user,input)=>{
     const filteredTasks=users.filter(each=>each.name===user)[0].tasks
-    
     const updatedTasks=filteredTasks.map(each=>{
-
       if(each.id==id){
-        console.log("OP",each.id,id);
         return{...each,task:input}
       }
       return {...each}
     })
     const updatedUsers=users.map(each=>{
-      console.log("EACH",typeof each.id,typeof user);
       if(each.name===user){
-        
         return{...each,tasks:updatedTasks}
       }
       return {...each}
     })
-    console.log("tasks",filteredTasks);
-    console.log("updatedtasks",updatedTasks);
-    console.log("updatedUsers",updatedUsers);
     setUsers(updatedUsers)
   }
   
   const createUser=(newUser)=>{
-    
       const newEntry={id:count,name:newUser,tasks:[]}
       setUsers(pre=>[...pre,newEntry])
       count+=1
@@ -105,7 +80,6 @@ function App() {
   
   return (
     <>
-    
       <BrowserRouter>
       <AppContext.Provider value={{users,user,onTaskAddition,statusChange,taskEdit,createUser}}>
         <Routes>

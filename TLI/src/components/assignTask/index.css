@@ -19,7 +19,6 @@ input,select{
     border-radius: 5px;
     color:white;
 }
-
 .newUser{
     margin:20px 0;
     display: flex;
@@ -33,6 +32,5 @@ input,select{
     align-items: flex-start;
     border:2px solid gray;
     border-radius: 10px;
-    
     padding: 20px;
 }

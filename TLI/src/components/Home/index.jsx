@@ -1,4 +1,3 @@
-
 import {Link} from 'react-router-dom'
 import './index.css'
 import PropTypes from 'prop-types'
@@ -7,61 +6,57 @@ import AppContext from '../../context/AppContext'
 
 const Home=(props)=>{
     const[user,setUser]=useState(0)
-    // const [messageView,setMessageView]=useState(false)
     
-            return(
-                <AppContext.Consumer>
-        {value=>{
-            const{onChangeUser}=props
-            const{users}=value
-            const bool=users.forEach(each=>{
-                if(each.name===user){
-                    return true
+    return(
+        <AppContext.Consumer>
+            {value=>{
+                const{onChangeUser}=props
+                const{users}=value
+                const bool=users.forEach(each=>{
+                    if(each.name===user){
+                        return true
+                    }
+                        return false
+                })
+
+                const change=(e)=>{
+                    setUser(e.target.value)
+                    onChangeUser(e.target.value)
                 }
-            return false})
-                // let length=users.length 
-                // if(user>length || user==""){
-                //     setMessageView("true")
-                // }
-            console.log("hello home");
-            const change=(e)=>{
-                setUser(e.target.value)
-                onChangeUser(e.target.value)
-            }
-            const head="Check out Tasks' Status of Selected User"
-            return(
-                <>
-                <h1>Assign and View Tasks</h1>
-                <div className='home'>
-                <div >
-                <Link to='/assignTask'>
-                    <button type="button" >Assign Tasks</button>
-                </Link>
-                </div>
-                <div className='home2'>
-                <div className='home3'>
-                <label htmlFor="user">Select User</label>
-                    <select id="user" value={user} onChange={e=>change(e)} >
-                        <option value="">Select User</option>
-                        {users.map(user => (
-                        <option key={user.id} value={user.name}>{user.name}</option>
-                        ))}
-                    </select>
+                const head="Check out Tasks' Status of Selected User"
+                return(
+                    <>
+                    <h1>Assign and View Tasks</h1>
+                    <div className='home'>
+                        <div >
+                            <Link to='/assignTask'>
+                                <button type="button" >Assign Tasks</button>
+                            </Link>
+                        </div>
+                        <div className='home2'>
+                            <div className='home3'>
+                                <label htmlFor="user">Select User</label>
+                                <select id="user" value={user} onChange={e=>change(e)} >
+                                    <option value="">Select User</option>
+                                    {users.map(user => (
+                                    <option key={user.id} value={user.name}>{user.name}</option>
+                                    ))}
+                                </select>
+                            </div>
+                            <Link to='/taskStatus'>
+                                <button type="button" disabled={bool}>{head} </button>
+                            </Link>
+                        </div>
+                    
                     </div>
-                    <Link to='/taskStatus'>
-                    <button type="button" disabled={bool}>{head} </button>
-                </Link>
-                </div>
-                
-                </div>
-                </>
-            )
-        }}
-    </AppContext.Consumer>
-            )
+                    </>
+                )
+            }}
+                </AppContext.Consumer>
+    )
 }
 Home.propTypes = {
     onChangeUser: PropTypes.func.isRequired,
     
-  }
+}
 export default Home
