@@ -23,14 +23,14 @@ const Home=(props)=>{
                     setUser(e.target.value)
                     onChangeUser(e.target.value)
                 }
-                const head="Check out Tasks' Status of Selected User"
+                const head="Check out Tasks"
                 return(
                     <>
                     <h1>Assign and View Tasks</h1>
                     <div className='home'>
                         <div >
                             <Link to='/assignTask'>
-                                <button type="button" >Assign Tasks</button>
+                                <button className='buyt' type="button" >Assign Tasks</button>
                             </Link>
                         </div>
                         <div className='home2'>
@@ -44,7 +44,7 @@ const Home=(props)=>{
                                 </select>
                             </div>
                             <Link to='/taskStatus'>
-                                <button type="button" disabled={bool}>{head} </button>
+                                <button className='buy' type="button" disabled={bool}>{head} </button>
                             </Link>
                         </div>
                     

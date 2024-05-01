@@ -10,7 +10,8 @@
 .home2{
     display: flex;
     flex-direction: column;
-    align-items:center;
+    justify-content: flex-start;
+    align-items:flex-start;
     margin-left: 10vw;
     
 }
@@ -31,4 +32,15 @@
     color:white;
     margin:0px  0;
     border:1px solid gray;
+}
+@media (max-width:486px){
+    .buy{
+        font-size: 10px;
+        padding:5px 5px;
+        align-self: flex-start;
+    }
+    .buyt{
+        font-size: 10px;
+        padding:5px 5px;
+    }
 }

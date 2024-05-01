@@ -14,7 +14,8 @@
 }
 body{
   background: linear-gradient(to bottom right, #9cd7e4, #8080a9);
-  
+  background-size: 100vw 100vh;
+  background-repeat: no-repeat;
 }
 a {
   font-weight: 500;
